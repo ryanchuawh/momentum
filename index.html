@@ -3,19 +3,53 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/css/style.css">
-        
+        <link rel="stylesheet" href="assets/css/slider.css">
+        <script src="https://kit.fontawesome.com/ee315df075.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header></header>
         <main id="main">
-            <form id="greeting">
-                <p>Hello, what's your name?</p>
-                <input type="text" name="name" id="name" required>
-                <span id="message">Please let us know how to address you</span>
-            </form>
-            
+            <div id="container">
+                <div id="clock-container">
+                    <span id="clock">10:45</span>
+                    <i id="clock-option" class="fa-solid fa-ellipsis"></i>  
+                    <!--Put toggle in modal for 24 hr switch-->
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="clockSlider round"></span>
+                    </label>
+                </div>
+                <div>
+                    <span class="heading">Good Morning,</span>
+                    <input type="text" name="name" id="name" value="Kohaku" required>
+                    <!--Missing Modal for edit name-->
+                    <span id="name-option" class="fa-solid fa-ellipsis"></span>
+                </div>
+                <form>
+                    <p class="heading">What is your main focus for today?</p>
+                    <input type="text" name="mainFocus" id="mainTodo" required>
+                <!--Hidden sa Una-->
+                <div id="hiddenTodo">
+                    <p class="heading">TODAY</p>
+                    <input type="checkbox" id="mainCheck" name="mainFocus">
+                    <label for="mainFocus" class="mainFocus">Test</label>
+                    <!--Missing Modal for edit/clear todo-->
+                    <i id="main-option" class="fa-solid fa-ellipsis"></i>  
+                    <p id="sucess">Great Work!</p>      
+                </div>
+                </form>
+                <div id="quotes-container">
+                    <p class="quotes">“Do what you can, with what you have, where you are.”</p>
+                    <p class="author">Theodore Roosevelt</p>
+                </div>
+                <footer id="footer">
+                    <!--Missing Modal for Settings-->
+                    <div id="settings"><i class="fa-solid fa-gear"></i></div>
+                    <!--Missing Modal for todo-->
+                    <div id="todo">Todo</div>
+                </footer>
+            </div>
         </main>
-        <footer></footer>
     <script src=""></script>
     </body>
 </html>

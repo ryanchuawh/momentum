@@ -9,44 +9,93 @@ html{
 body{
     margin: 0;/*Reset*/
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px #000000;
 }
 /*Main*/
 #main{
-    background-color: aqua;
+    background-color: teal;
     color: white;
     height: 100vh;
     overflow: hidden;
-    background-image: url("/assets/img/spiritedaway.jpg");
+    background-image: url("/assets/img/place4.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-/*Greeting*/
-#greeting{
+/*Container*/
+#container{
     height: inherit;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 100%;
+    
 }
-#greeting p{
+.heading{
     font-size: 225%;  
 }
-#greeting input{
+/* Input for Name*/
+#name{
+    max-width: 150px;
     font-size: 225%;
-    text-align: center;
+   /*text-align: center;*/
+    text-shadow: 2px 2px #000000;
     color: white;
     background: transparent;
+    border: none;
+    /*pointer-events:all;*/
+    pointer-events: none;/*I enable pag clinick edit*/
+}
+#name:focus{
+    outline: none;
+}
+
+/*Clock*/
+#clock-container{
+   
+}
+#clock{
+    font-size: 800%; /*need iresize for small devices*/
+}
+.fa-ellipsis:hover{
+    background-color: bisque;
+    text-shadow: none;
+    color: black;
+    padding: 1px;
+    border-radius: 10px;
+}
+/*Todo Input*/
+
+#mainTodo{
+    font-size: 225%;
+    text-shadow: 2px 2px #5f5d5d;
+    background: transparent;
+    text-align: center;
+    color: white;
     border-color: white;
     border-top: none;
     border-left: none;
     border-right: none;
 }
-#greeting input:focus{
+#mainTodo:focus{
     outline: none;
 }
-#greeting span{
-    outline: none;
+.mainFocus{
+    font-size: 225%;  
+    
+}
+/*Yung sa may checkbox*/
+#hiddenTodo{
+    display: none;
+}
+/* Settings at todo*/
+#footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    padding: 10px;
+    width: 100%;
 }
