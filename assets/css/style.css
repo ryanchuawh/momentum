@@ -55,11 +55,14 @@ body{
 
 /*Clock*/
 #clock-container{
-   
+   flex-direction: row;
 }
-#clock{
-    font-size: 800%; /*need iresize for small devices*/
+.clock-container span{
+    /* font-size: 800%; need iresize for small devices */
+    font-size: 800%;
+    color: #fff;
 }
+
 .fa-ellipsis:hover{
     background-color: bisque;
     text-shadow: none;
