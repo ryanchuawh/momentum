@@ -44,7 +44,17 @@
                 </div>
                 <footer id="footer">
                     <!--Missing Modal for Settings-->
-                    <div id="settings"><i class="fa-solid fa-gear"></i></div>
+                    <div id="settingscontain">
+                        <div id="settings"><i class="fa-solid fa-gear"></i></div>
+                        <div id="settingsmodal" class="modal">
+                            <div class="settingsmodalcontent">
+                                <span id="closeBtn" class="closeBtn">&times;</span>
+                                <p>Settings</p><br>
+                                <p>Help</p><br>
+                                <p>About</p>
+                            </div>
+                        </div>
+                    </div>
                     <!--Missing Modal for todo-->
                     <div id="todo">Todo</div>
                 </footer>
@@ -53,5 +63,12 @@
     
         <!-- SCRIPTS -->
         <script type="text/javascript" src="./scripts/clock.js"></script>
+        <script src="./scripts/settingsmodal.js"></script>
+        <script>
+            var backImg = ["assets/img/food1.jpg", "assets/img/food2.jpg", "assets/img/food3.jpg", "assets/img/food4.jpg", "assets/img/food5.jpg"];
+            var today = new Date();
+            var day = Math.floor(today/8.64e7);
+            document.getElementById('main').style.backgroundImage = 'url('+backImg[day%5]+')';
+        </script>
     </body>
 </html>
