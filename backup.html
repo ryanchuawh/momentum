@@ -9,14 +9,19 @@
     <body>
         <header></header>
         <main id="main">
-            <div id="container">
-                <div id="login">
-                        <p class="heading">Hello, what is your name?</p>
-                        <input type="text" name="name" id="LoginName">
-                        <p id="message"></p>
-                        <button onclick="ifValid()" class="btn">Continue</button>
+            <div class="container">
+            <div id="login">
+                <div id="name-container">
+                    <form novalidate id="loginForm" onsubmit="ifValid()">
+                    <p class="heading">Hello, what is your name?</p>
+                    <input type="text" name="name" id="LoginName">
+                    <p id="message"></p>
+                    <button type="submit" >Continue</button>
+                    </form>
                 </div>
-                <div id="home">
+            </div>
+            <div id="home">
+            
                 <div class="clock-container">
                     <span>00:00</span>
                     <i id="clock-option" class="fa-solid fa-ellipsis"></i>  
@@ -55,7 +60,8 @@
                     <!--Missing Modal for todo-->
                     <div id="todo">Todo</div>
                 </footer>
-                </div>
+            </div>
+           
             </div>
         </main>
     
