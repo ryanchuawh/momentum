@@ -1,9 +1,14 @@
-/*Boilerplate*/
+
+@import "layout.css";
+@import "login.css";
+@import "modal.css";
+@import "slider.css";
+
 html{
-    box-sizing:border-box; /*includes padding and border in the width and height*/
+    box-sizing:border-box; 
     overflow-wrap: break-word;
 }
-*, *::before, *::after{ /*includes all*/
+*, *::before, *::after{ 
     box-sizing: inherit;
 }
 body{
@@ -14,64 +19,35 @@ body{
 }
 /*Main*/
 #main{
+    height: 100%;
+    
+    /*width: 100%;*/
+    overflow: hidden;
+    background-color: rgb(167, 94, 163);
+    display: flex;
+    flex-direction: column;   
+}
+#bg-img{
     background-color: teal;
     color: white;
-    height: 100vh;
-    overflow: hidden;
-    background-image: url("/assets/img/place4.jpg");
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    /*background-image: url("/assets/img/spiritedaway.jpg");*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-/*Login*/
-#login{
 
-}
-/*Inputs in login*/
-#login input{
+
+/*Greetings Size*/
+.greetings{
     font-size: 225%;
-    text-align: center;
-    color: white;
-    background: transparent;
-    border-color: white;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-}
-#login input:focus{
-    outline: none;
-}
-.btn{
-    background-color: transparent;
-    border-radius: 10px;
-    border:1px solid white;
-    color: white;
-    width: 100px;
-    padding: 5px;
-}
-.btn:focus{
-    outline: none;
-}
-.btn:hover{
-    background-color: #5f5d5d;
 }
 /*Home*/
 #home{
-    display: none;   
-}
-/*Container*/
-#container{
-    height: inherit;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    display: none;
     width: 100%;
-    
-}
-.heading{
-    font-size: 225%;  
 }
 /* Input for Name*/
 #name{
@@ -83,7 +59,7 @@ body{
     background: transparent;
     border: none;
     /*pointer-events:all;*/
-    pointer-events: none;/*I enable pag clinick edit*/
+    pointer-events: none;/*Enable later(edit name)*/
 }
 #name:focus{
     outline: none;
@@ -94,7 +70,6 @@ body{
    flex-direction: row;
 }
 .clock-container span{
-    /* font-size: 800%; need iresize for small devices */
     font-size: 800%;
     color: #fff;
 }
@@ -126,15 +101,23 @@ body{
     font-size: 225%;  
     
 }
-/*Yung sa may checkbox*/
+/*Main Focus checkbox*/
 #hiddenTodo{
     display: none;
 }
-/* Settings at todo*/
-#footer{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 100px;
-    padding: 10px;
-    width: 100%;
-}
+/*Media Queries*/
+@media (max-width: 768px) {
+    #login input{
+        font-size: 150%;
+    }
+    #name{
+        font-size: 150%;
+
+    }
+    .greetings{
+      font-size: 150%;
+    }  
+    .clock-container span{
+        font-size: 500%;
+    }
+  }
