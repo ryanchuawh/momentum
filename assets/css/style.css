@@ -3,6 +3,7 @@
 @import "login.css";
 @import "modal.css";
 @import "slider.css";
+@import "optionList.css";
 
 html{
     box-sizing:border-box; 
@@ -20,15 +21,12 @@ body{
 /*Main*/
 #main{
     height: 100%;
-    
     /*width: 100%;*/
     overflow: hidden;
-    background-color: rgb(167, 94, 163);
     display: flex;
     flex-direction: column;   
 }
 #bg-img{
-    background-color: teal;
     color: white;
     width: 100%;
     height: 100%;
@@ -52,6 +50,7 @@ body{
 /* Input for Name*/
 #name{
     max-width: 150px;
+    /*width:min-content;*/
     font-size: 225%;
    /*text-align: center;*/
     text-shadow: 2px 2px #000000;
@@ -74,13 +73,13 @@ body{
     color: #fff;
 }
 
-.fa-ellipsis:hover{
+/*.fa-ellipsis:hover{
     background-color: bisque;
     text-shadow: none;
     color: black;
     padding: 1px;
     border-radius: 10px;
-}
+}*/
 /*Todo Input*/
 
 #mainTodo{
