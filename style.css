@@ -1,0 +1,141 @@
+/*Boilerplate*/
+html{
+    box-sizing:border-box; /*includes padding and border in the width and height*/
+    overflow-wrap: break-word;
+}
+*, *::before, *::after{ /*includes all*/
+    box-sizing: inherit;
+}
+body{
+    margin: 0;/*Reset*/
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px #000000;
+}
+/*Main*/
+#main{
+    background-color: teal;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("/assets/img/place4.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*Container*/
+#container{
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    
+}
+.heading{
+    font-size: 225%;  
+}
+/* Input for Name*/
+#name{
+    max-width: 150px;
+    font-size: 225%;
+   /*text-align: center;*/
+    text-shadow: 2px 2px #000000;
+    color: white;
+    background: transparent;
+    border: none;
+    /*pointer-events:all;*/
+    pointer-events: none;/*I enable pag clinick edit*/
+}
+#name:focus{
+    outline: none;
+}
+
+/*Clock*/
+#clock-container{
+   flex-direction: row;
+}
+.clock-container span{
+    /* font-size: 800%; need iresize for small devices */
+    font-size: 800%;
+    color: #fff;
+}
+
+.fa-ellipsis:hover{
+    background-color: bisque;
+    text-shadow: none;
+    color: black;
+    padding: 1px;
+    border-radius: 10px;
+}
+/*Todo Input*/
+
+#mainTodo{
+    font-size: 225%;
+    text-shadow: 2px 2px #5f5d5d;
+    background: transparent;
+    text-align: center;
+    color: white;
+    border-color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+#mainTodo:focus{
+    outline: none;
+}
+.mainFocus{
+    font-size: 225%;  
+    
+}
+/*Yung sa may checkbox*/
+#hiddenTodo{
+    display: none;
+}
+/* Settings at todo*/
+#footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+    padding: 10px;
+    width: 100%;
+}
+#settings:hover{
+    cursor: pointer;
+}
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.settingsmodalcontent{
+    background-color: #fff;
+    margin-top: 31.5%;
+    margin-right: 75%;
+    padding: 20px;
+    width: 25%;
+    height: 40%;
+}
+.settingsmodalcontent span, .settingsmodalcontent p{
+    text-shadow: none;
+    color: #000000;
+}
+.closeBtn{
+    color: #ccc;
+    float: right;
+}
+.closeBtn:hover, .closeBtn:focus{
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
