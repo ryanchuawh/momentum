@@ -1,9 +1,14 @@
-/*Boilerplate*/
+@import "layout.css";
+@import "login.css";
+@import "modal.css";
+@import "slider.css";
+@import "optionList.css";
+
 html{
-    box-sizing:border-box; /*includes padding and border in the width and height*/
+    box-sizing:border-box; 
     overflow-wrap: break-word;
 }
-*, *::before, *::after{ /*includes all*/
+*, *::before, *::after{ 
     box-sizing: inherit;
 }
 body{
@@ -14,32 +19,37 @@ body{
 }
 /*Main*/
 #main{
-    background-color: teal;
-    color: white;
-    height: 100vh;
+    height: 100%;
+    /*width: 100%;*/
     overflow: hidden;
-    background-image: url("/assets/img/place4.jpg");
+    display: flex;
+    flex-direction: column;   
+}
+#bg-img{
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    /*background-image: url("/assets/img/spiritedaway.jpg");*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-/*Container*/
-#container{
-    height: inherit;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    
+
+
+/*Greetings Size*/
+.greetings{
+    font-size: 225%;
 }
-.heading{
-    font-size: 225%;  
+/*Home*/
+#home{
+    display: none;
+    width: 100%;
 }
 /* Input for Name*/
 #name{
     max-width: 150px;
+    /*width:min-content;*/
     font-size: 225%;
    /*text-align: center;*/
     text-shadow: 2px 2px #000000;
@@ -47,7 +57,7 @@ body{
     background: transparent;
     border: none;
     /*pointer-events:all;*/
-    pointer-events: none;/*I enable pag clinick edit*/
+    pointer-events: none;/*Enable later(edit name)*/
 }
 #name:focus{
     outline: none;
@@ -58,18 +68,17 @@ body{
    flex-direction: row;
 }
 .clock-container span{
-    /* font-size: 800%; need iresize for small devices */
     font-size: 800%;
     color: #fff;
 }
 
-.fa-ellipsis:hover{
+/*.fa-ellipsis:hover{
     background-color: bisque;
     text-shadow: none;
     color: black;
     padding: 1px;
     border-radius: 10px;
-}
+}*/
 /*Todo Input*/
 
 #mainTodo{
@@ -90,15 +99,23 @@ body{
     font-size: 225%;  
     
 }
-/*Yung sa may checkbox*/
+/*Main Focus checkbox*/
 #hiddenTodo{
     display: none;
 }
-/* Settings at todo*/
-#footer{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 100px;
-    padding: 10px;
-    width: 100%;
-}
+/*Media Queries*/
+@media (max-width: 768px) {
+    #login input{
+        font-size: 150%;
+    }
+    #name{
+        font-size: 150%;
+
+    }
+    .greetings{
+      font-size: 150%;
+    }  
+    .clock-container span{
+        font-size: 500%;
+    }
+  }

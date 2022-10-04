@@ -1,0 +1,18 @@
+/*Layout*/
+/*Clock, Greeting, Main todo*/
+#top{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+/*Settings,Quotes,Todo*/
+#bottom{
+    height: 10%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: center;  
+}
