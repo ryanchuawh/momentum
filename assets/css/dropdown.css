@@ -1,0 +1,57 @@
+.categorybtn {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    font-size: 150%;
+    padding: 10px;
+    gap:5px;
+    border: none;
+    cursor: pointer;
+}
+
+.category {
+    position: relative;
+    justify-content: left;
+    text-align: left;
+}
+
+.category-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.category-content a {
+    color: black;
+    padding:6px 8px;
+    text-decoration: none;
+    display: block;
+}
+
+.category-content a:hover {
+    background-color: #f1f1f1
+}
+
+.category:hover .category-content {
+    display: block;
+}
+/*For today dropdown*/
+.catRow{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+.catRow:hover{
+    background-color: #f1f1f1
+}
+/*For lists(checkbox) dropdown*/
+.catBtn{
+    background-color: transparent;
+    border: none;
+}
+.catBtn:hover{
+    background-color: #f1f1f1   
+}

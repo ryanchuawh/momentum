@@ -3,6 +3,7 @@
 @import "modal.css";
 @import "slider.css";
 @import "optionList.css";
+@import "dropdown.css";
 
 html{
     box-sizing:border-box; 
@@ -83,6 +84,7 @@ body{
 /*Todo Input*/
 #main-todo{
     display: none;
+    
 }
 #mainTodo{
 
@@ -105,22 +107,37 @@ body{
 }
 /*Main Focus checkbox*/
 #hiddenTodo{
-    
+    /*display: none;*/
     padding: 10px;
     height: 300px;
-    
-   /* background-color: #f1e7bb;*/
-    /*display: none;*/
 }
 #hiddenTodo #sucess{
     display: none;
 }
 /*Todo Modal*/
 #tasks{
-    display: flex;
-    gap: 10px;
-}
+   display: grid;
+   justify-content: left;
+   text-align: left;
+   gap:10px;
+   padding-top:20px;
+   padding-left: 10px;
+   width: 100%;
+   height: 100px;
 
+}
+#lists{
+    height: 90px;
+}
+.newTask{
+    width: 300px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.newTask:focus{
+    outline: none;
+}
 /*Pomodoro*/
 #pomoNavs{
     display: flex;

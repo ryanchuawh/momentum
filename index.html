@@ -90,6 +90,7 @@
                             <div id="todoModal">
                                 <div id="todoList">
                                     <span id="todoClose" class="closeBtn">&times;</span>
+                                    
                                     <div id="pomodoro">
                                         <div id="pomoNavs">
                                             <button class="nav active">Pomodoro</button>
@@ -102,16 +103,41 @@
                                         <div class="StartBtn">START</div>
                                     </div>
                                     
-                                    <h1 class="title">Today</h1>
-                                    <div id="tasks">
-                                        <input type="checkbox" class="todobox">
-                                        <label for="todo-lists">Test</label>
-                                        <i class="fa-solid fa-ellipsis"></i>
+                                    <div class="category">
+                                        <button class="categoryBtn">
+                                            Today<i class="fa-solid fa-angle-down"></i>
+                                        </button>
+                                        <div class="category-content">
+                                            <div class="catRow">
+                                                <span>Today</span>
+                                                <span>0</span>
+                                            </div>
+                                            <div class="catRow">
+                                                <span>Done</span>
+                                                <span>0</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="bottomArrow"></div>
-                                      
-                                </div>
-                                
+                                    <div id="tasks">
+                                        <div id="lists">
+                                            <div class="category">
+                                                <input type="checkbox" class="todobox">
+                                                <label for="todo-lists">Test</label>
+                                                <button class="catBtn">
+                                                    <i class="fa-solid fa-ellipsis"></i>
+                                                </button> 
+                                                <div class="category-content">
+                                                    <a>Edit</a>
+                                                    <a>Delete</a>
+                                                </div>
+                                            </div>
+                                         </div>
+                                        <div id="newTodo">
+                                            <input type="text" placeholder="New Todo" class="newTask">
+                                        </div>
+                                    </div>
+                                <div class="bottomArrow"></div>           
+                                </div>   
                         </div>
                    </section>
                 
