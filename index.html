@@ -50,13 +50,15 @@
                             </div>
                             <div>
                                 <form>
-                                    <p class="greetings">What is your main focus for today?</p>
-                                    <input type="text" name="mainFocus" id="mainTodo" required>
+                                    <div id="main-todo">
+                                        <p class="greetings">What is your main focus for today?</p>
+                                        <input type="text" name="mainFocus" id="mainTodo" required>
+                                    </div>
                                     <!--Hidden-->
                                     <div id="hiddenTodo">
                                         <p class="greetings">TODAY</p>
                                         <input type="checkbox" id="mainCheck" name="mainFocus">
-                                        <label for="mainFocus" class="mainFocus">Test</label>
+                                        <label for="mainFocus" class="mainFocus">Testing</label>
                                         <!--Missing Modal for edit/clear todo-->
                                         <i id="main-option" class="fa-solid fa-ellipsis"></i>  
                                         <p id="sucess">Great Work!</p>      
@@ -74,15 +76,42 @@
                                         <p>Help</p>
                                         <p>About</p>
                                         <button id="logoutBtn" class="btn2">Logout</button>
+                                        <div class="bottom-arrow"></div>
                                     </div>
+                                    
                                 </div>
+                                
                             </div>
                             <div id="quotes-container">
                                 <p class="quotes">“Do what you can, with what you have, where you are.”</p>
                                 <p class="author">Theodore Roosevelt</p>
                             </div>
-                            <!--Missing Modal for todo-->
-                            <div id="todo">Todo</div>
+                            <div id="todoBtn">Todo</div>
+                            <div id="todoModal">
+                                <div id="todoList">
+                                    <span id="todoClose" class="closeBtn">&times;</span>
+                                    <div id="pomodoro">
+                                        <div id="pomoNavs">
+                                            <button class="nav active">Pomodoro</button>
+                                            <button class="nav">Short Break</button>
+                                            <button class="nav">Long Break</button>
+                                        </div>
+                                        <div class="timer">
+                                            25:00
+                                        </div>
+                                        <div class="StartBtn">START</div>
+                                    </div>
+                                    
+                                    <h1 class="title">Today</h1>
+                                    <div id="tasks">
+                                        <input type="checkbox" class="todobox">
+                                        <label for="todo-lists">Test</label>
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </div>
+                                    <div class="bottomArrow"></div>
+                                      
+                                </div>
+                                
                         </div>
                    </section>
                 
