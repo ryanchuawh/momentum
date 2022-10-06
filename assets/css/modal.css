@@ -4,30 +4,33 @@
 .modal{
     display: none;
     position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    /*overflow: auto;*/
-    overflow: none;
-    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    bottom: 60px;
+    left: 20px;
+    border: 3px solid #f1f1f1;
 }
-
 .settingsmodalcontent{
-    background-color: #fff;
-    margin-top: 31.5%;
-    margin-right: 75%;
-    padding: 20px;
-    width: 25%;
-    height: 40%;
+    width: 500px;
+    height: 400px;
+    padding: 10px;
+    background-color: white;
 }
 .settingsmodalcontent span, .settingsmodalcontent p{
     text-shadow: none;
     color: #000000;
 }
+.settingsmodalcontent .bottom-arrow:after {
+    content: " ";
+    position: absolute;
+    left: 10px;
+    bottom: -15px;
+    border-top: 15px solid rgb(255, 255, 255);
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: none;
+  }
 .closeBtn{
-    color: #ccc;
+    color: rgb(0, 0, 0);
     float: right;
 }
 .closeBtn:hover, .closeBtn:focus{
@@ -35,3 +38,38 @@
     text-decoration: none;
     cursor: pointer;
 }
+/*Todo Modal*/
+#todoBtn{
+    cursor: pointer;
+}
+#todoModal {
+    display: none;
+    position: fixed;
+    border-radius: 10px;
+    bottom: 60px;
+    right: 20px;
+    border: 3px solid #f1f1f1;
+    z-index: 1;
+    text-shadow: none;
+    color: #000000;
+  }
+  
+#todoList {
+    width: 350px;
+    height: 400px;
+    padding: 10px;
+    background-color: white;
+}
+.title{
+    text-align: left;
+}
+#todoList .bottomArrow:after {
+    content: " ";
+    position: absolute;
+    right: 10px;
+    bottom: -15px;
+    border-top: 15px solid rgb(255, 255, 255);
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: none;
+  }

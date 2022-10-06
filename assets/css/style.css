@@ -3,6 +3,7 @@
 @import "modal.css";
 @import "slider.css";
 @import "optionList.css";
+@import "dropdown.css";
 
 html{
     box-sizing:border-box; 
@@ -17,6 +18,7 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     text-shadow: 2px 2px #000000;
 }
+
 /*Main*/
 #main{
     height: 100%;
@@ -80,8 +82,12 @@ body{
     border-radius: 10px;
 }*/
 /*Todo Input*/
-
+#main-todo{
+    /*display: none;*/
+    
+}
 #mainTodo{
+
     font-size: 225%;
     text-shadow: 2px 2px #5f5d5d;
     background: transparent;
@@ -102,7 +108,70 @@ body{
 /*Main Focus checkbox*/
 #hiddenTodo{
     display: none;
+    padding: 10px;
+    height: 300px;
 }
+#hiddenTodo #sucess{
+    display: none;
+}
+/*Todo Modal*/
+#tasks{
+   display: grid;
+   justify-content: left;
+   text-align: left;
+   gap:10px;
+   padding-top:20px;
+   padding-left: 10px;
+   width: 100%;
+   height: 100px;
+
+}
+#lists{
+    height: 90px;
+}
+.newTask{
+    width: 300px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.newTask:focus{
+    outline: none;
+}
+/*Pomodoro*/
+#pomoNavs{
+    display: flex;
+    padding: 10px;
+    gap:1px;
+    color:black;
+    justify-content: space-around;
+}
+.nav{
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+}
+.active{
+    background-color: #f1e7bb;
+}
+.timer{
+    font-size: 225%;
+    padding: 10px;
+}
+.startBtn{
+    margin: auto;
+    justify-content: center;
+    background-color: gray;
+    border-radius: 10px;
+    border:1px solid white;
+    color: white;
+    width: 100px;
+    padding: 5px;
+}
+.startBtn:hover{
+    background-color: #aa8080;
+}
+
 /*Media Queries*/
 @media (max-width: 768px) {
     #login input{

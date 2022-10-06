@@ -29,12 +29,11 @@
                                             <label class="switch">
                                                 <input type="checkbox">
                                                 <span class="clockSlider round"></span>
-                                                </label>
-                                        </span>
-                                       
+                                            </label>
+                                        </span>   
                                     </div>
-                                </div> 
-                                
+                                </div>  
+
                             </div>
                             <div class="greet-container">
                                 <span class="greetings">Good Morning,</span>
@@ -50,13 +49,15 @@
                             </div>
                             <div>
                                 <form>
-                                    <p class="greetings">What is your main focus for today?</p>
-                                    <input type="text" name="mainFocus" id="mainTodo" required>
+                                    <div id="main-todo">
+                                        <p class="greetings">What is your main focus for today?</p>
+                                        <input type="text" name="mainFocus" id="mainTodo" required>
+                                    </div>
                                     <!--Hidden-->
                                     <div id="hiddenTodo">
                                         <p class="greetings">TODAY</p>
                                         <input type="checkbox" id="mainCheck" name="mainFocus">
-                                        <label for="mainFocus" class="mainFocus">Test</label>
+                                        <label for="mainFocus" class="mainFocus">Testing</label>
                                         <!--Missing Modal for edit/clear todo-->
                                         <i id="main-option" class="fa-solid fa-ellipsis"></i>  
                                         <p id="sucess">Great Work!</p>      
@@ -73,9 +74,11 @@
                                         <p>Settings</p><br>
                                         <p>Help</p>
                                         <p>About</p>
+
                                         <button id="imgBtn" class="imgBtn">Switch Background Image</button><br><br>
                                         <button id="quoteBtn" class="quoteBtn">Switch Quotes</button><br><br>
                                         <button id="logoutBtn" class="btn2">Logout</button>
+                                        <div class="bottom-arrow"></div>
                                     </div>
                                 </div>
                             </div>
@@ -83,11 +86,60 @@
                                 <p id="quotes"></p>
                                 <p class="author"></p>
                             </div>
-                            <!--Missing Modal for todo-->
-                            <div id="todo">Todo</div>
+                            <div id="todoBtn">Todo</div>
+                            <div id="todoModal">
+                                <div id="todoList">
+                                    <span id="todoClose" class="closeBtn">&times;</span>
+                                    
+                                    <div id="pomodoro">
+                                        <div id="pomoNavs">
+                                            <button class="nav active">Pomodoro</button>
+                                            <button class="nav">Short Break</button>
+                                            <button class="nav">Long Break</button>
+                                        </div>
+                                        <div class="timer">
+                                            25:00
+                                        </div>
+                                        <div class="StartBtn">START</div>
+                                    </div>
+                                    
+                                    <div class="category">
+                                        <button class="categoryBtn">
+                                            Today<i class="fa-solid fa-angle-down"></i>
+                                        </button>
+                                        <div class="category-content">
+                                            <div class="catRow">
+                                                <span>Today</span>
+                                                <span>0</span>
+                                            </div>
+                                            <div class="catRow">
+                                                <span>Done</span>
+                                                <span>0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="tasks">
+                                        <div id="lists">
+                                            <div class="category">
+                                                <input type="checkbox" class="todobox">
+                                                <label for="todo-lists">Test</label>
+                                                <button class="catBtn">
+                                                    <i class="fa-solid fa-ellipsis"></i>
+                                                </button> 
+                                                <div class="category-content">
+                                                    <a>Edit</a>
+                                                    <a>Delete</a>
+                                                </div>
+                                            </div>
+                                         </div>
+                                        <div id="newTodo">
+                                            <input type="text" placeholder="New Todo" class="newTask">
+                                        </div>
+                                    </div>
+                                <div class="bottomArrow"></div>           
+                            </div>   
                         </div>
-                   </section>
-                
+                   </section>     
             </div>
         </main>    
     
@@ -101,6 +153,7 @@
         <script type="text/javascript" src="./scripts/logout.js"></script>
         <script type="text/javascript" src="./scripts/editName.js"></script>
         <script type="text/javascript" src="./scripts/quote.js"></script>
+
 
     </body>
 </html>
