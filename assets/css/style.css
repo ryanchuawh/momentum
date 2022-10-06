@@ -171,7 +171,42 @@ body{
 .startBtn:hover{
     background-color: #aa8080;
 }
+/*Settings Nav and Myquotes*/
+#settingsRow{
+    display: flex;
+    height: 100%;
+}
+#settingsNav{
 
+text-align: left;
+height: 100%;
+width: 30%;
+border-right:1px solid gray;
+}
+#myQuotes{
+    color:#000000;
+    text-shadow: none;
+    width: 70%;
+    text-align: left;
+    padding:10px;
+    overflow-y: scroll;
+}
+/*Ul Lists for quotes*/
+ul{
+   padding: 0;
+}
+.quotesLi{
+    font-size: 15px;
+    padding: 5px;
+    list-style: none;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+#newQuote{
+}
+#logoutBtn{ 
+    bottom:0;
+}
 /*Media Queries*/
 @media (max-width: 768px) {
     #login input{

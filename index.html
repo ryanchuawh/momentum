@@ -70,14 +70,49 @@
                                 <div id="settings"><i class="fa-solid fa-gear"></i></div>
                                 <div id="settingsmodal" class="modal">
                                     <div class="settingsmodalcontent">
-                                        <span id="closeBtn" class="closeBtn">&times;</span>
-                                        <p>Settings</p><br>
-                                        <p>Help</p>
-                                        <p>About</p>
-
-                                        <button id="imgBtn" class="imgBtn">Switch Background Image</button><br><br>
-                                        <button id="quoteBtn" class="quoteBtn">Switch Quotes</button><br><br>
-                                        <button id="logoutBtn" class="btn2">Logout</button>
+                                       
+                                        <div id="settingsRow">
+                                            <div id="settingsNav">
+                                                <p>Settings</p>
+                                                <span>Background</span> 
+                                                <button id="imgBtn" class="imgBtn btn2" ><i class="fa-solid fa-shuffle"></i></button>
+                                                <span>Quotes</span>
+                                                <button id="quoteBtn" class="quoteBtn btn2"><i class="fa-solid fa-shuffle"></i></button><br>
+                                                <button id="logoutBtn" class="btn2">Logout</button>
+                                            </div>
+                                            <div id="myQuotes">
+                                                <span id="closeBtn" class="closeBtn">&times;</span>
+                                                <h1>Quotes</h1>
+                                                <h5>Add Quotes</h5>
+                                                <div id="newQuote">
+                                                    <textarea placeholder="Add Quote" class="newTask" id="newQuote"></textarea>
+                                                    <input type="text" placeholder="Author" class="newTask">
+                                                    <button class="btn2">Add</button>
+                                                </div>
+                                                <div id="catQuotes">
+                                                    <!--Dom display quotes-->
+                                                    <h5>Motivational Quotes</h5>
+                                                    <ul id="motivational">
+                                                        <li class="quotesLi">
+                                                            It always seems impossible until it's done.<br>-Nelson Mandela
+                                                        </li>
+                                                    </ul>
+                                                    <h5>Life Quotes</h5>
+                                                    <ul id="life">
+                                                        <li class="quotesLi">
+                                                            It always seems impossible until it's done.<br>-Nelson Mandela
+                                                        </li>
+                                                    </ul>
+                                                    <h5>Sucess Quotes</h5>
+                                                    <ul id="sucess">
+                                                        <li class="quotesLi">
+                                                            It always seems impossible until it's done.<br>-Nelson Mandela
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                    
+                                            </div>
+                                        </div>
                                         <div class="bottom-arrow"></div>
                                     </div>
                                 </div>

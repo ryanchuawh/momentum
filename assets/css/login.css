@@ -36,13 +36,12 @@
     background-color: #5f5d5d;
 }
 .btn2{
-    background-color: gray;
     border-radius: 10px;
     border:1px solid white;
     color: white;
-    width: 100px;
+    background-color: #aa8080;
     padding: 5px;
 }
 .btn2:hover{
-    background-color: #aa8080;
+    background-color: #6b4444;
 }
