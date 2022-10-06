@@ -3,55 +3,104 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/slider.css">
         <script src="https://kit.fontawesome.com/ee315df075.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <header></header>
         <main id="main">
-            <div id="container">
-                <div class="clock-container">
-                    <span>00:00</span>
-                    <i id="clock-option" class="fa-solid fa-ellipsis"></i>  
-                    <!--Put toggle in modal for 24 hr switch-->
-                    <label class="switch">
-                        <input type="checkbox">
-                        <span class="clockSlider round"></span>
-                    </label>
-                </div>
-                <div>
-                    <span class="heading">Good Morning,</span>
-                    <input type="text" name="name" id="name" value="Kohaku" required>
-                    <!--Missing Modal for edit name-->
-                    <span id="name-option" class="fa-solid fa-ellipsis"></span>
-                </div>
-                <form>
-                    <p class="heading">What is your main focus for today?</p>
-                    <input type="text" name="mainFocus" id="mainTodo" required>
-                <!--Hidden sa Una-->
-                <div id="hiddenTodo">
-                    <p class="heading">TODAY</p>
-                    <input type="checkbox" id="mainCheck" name="mainFocus">
-                    <label for="mainFocus" class="mainFocus">Test</label>
-                    <!--Missing Modal for edit/clear todo-->
-                    <i id="main-option" class="fa-solid fa-ellipsis"></i>  
-                    <p id="sucess">Great Work!</p>      
-                </div>
-                </form>
-                <div id="quotes-container">
-                    <p class="quotes">“Do what you can, with what you have, where you are.”</p>
-                    <p class="author">Theodore Roosevelt</p>
-                </div>
-                <footer id="footer">
-                    <!--Missing Modal for Settings-->
-                    <div id="settings"><i class="fa-solid fa-gear"></i></div>
-                    <!--Missing Modal for todo-->
-                    <div id="todo">Todo</div>
-                </footer>
+            <div id="bg-img">
+                    <section id="login">
+                        <div id="login-container">
+                            <p class="greetings">Hello, what is your name?</p>
+                            <input type="text" name="name" id="LoginName">
+                            <p id="message"></p>
+                            <button id="continueBtn" class="btn">Continue</button>
+                        </div>
+                    </section>
+                    <section id="home">
+                        <div id="top">
+                            <div class="clock-container">
+                                <span>00:00</span>
+                                <div class="option">
+                                    <button class="optionbtn">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                    <div class="option-content">
+                                        <span id="toggleText">12-hour clock
+                                            <label class="switch">
+                                                <input type="checkbox">
+                                                <span class="clockSlider round"></span>
+                                                </label>
+                                        </span>
+                                       
+                                    </div>
+                                </div> 
+                                
+                            </div>
+                            <div class="greet-container">
+                                <span class="greetings">Good Morning,</span>
+                                <input type="text" name="name" id="name" value="" required>
+                                <div class="option">
+                                    <button class="optionbtn">
+                                        <i class="fa-solid fa-ellipsis"></i>
+                                    </button>
+                                    <div class="option-content">
+                                      <span id="editNameBtn">Edit Name</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <form>
+                                    <p class="greetings">What is your main focus for today?</p>
+                                    <input type="text" name="mainFocus" id="mainTodo" required>
+                                    <!--Hidden-->
+                                    <div id="hiddenTodo">
+                                        <p class="greetings">TODAY</p>
+                                        <input type="checkbox" id="mainCheck" name="mainFocus">
+                                        <label for="mainFocus" class="mainFocus">Test</label>
+                                        <!--Missing Modal for edit/clear todo-->
+                                        <i id="main-option" class="fa-solid fa-ellipsis"></i>  
+                                        <p id="sucess">Great Work!</p>      
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="bottom">
+                            <div id="settingscontain">
+                                <div id="settings"><i class="fa-solid fa-gear"></i></div>
+                                <div id="settingsmodal" class="modal">
+                                    <div class="settingsmodalcontent">
+                                        <span id="closeBtn" class="closeBtn">&times;</span>
+                                        <p>Settings</p><br>
+                                        <p>Help</p>
+                                        <p>About</p>
+                                        <button id="imgBtn" class="imgBtn">Switch Background Image</button><br><br>
+                                        <button id="quoteBtn" class="quoteBtn">Switch Quotes</button><br><br>
+                                        <button id="logoutBtn" class="btn2">Logout</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="quotes-container">
+                                <p id="quotes"></p>
+                                <p class="author"></p>
+                            </div>
+                            <!--Missing Modal for todo-->
+                            <div id="todo">Todo</div>
+                        </div>
+                   </section>
+                
             </div>
-        </main>
+        </main>    
     
         <!-- SCRIPTS -->
         <script type="text/javascript" src="./scripts/clock.js"></script>
+        <script type="text/javascript" src="./scripts/greeting.js"></script>
+        <script type="text/javascript" src="./scripts/backgroundImg.js"></script>
+        <script src="./scripts/settingsmodal.js"></script>
+        <script type="text/javascript" src="./scripts/checkLogin.js"></script>
+        <script type="text/javascript" src="./scripts/loginValidation.js"></script>
+        <script type="text/javascript" src="./scripts/logout.js"></script>
+        <script type="text/javascript" src="./scripts/editName.js"></script>
+        <script type="text/javascript" src="./scripts/quote.js"></script>
+
     </body>
 </html>
