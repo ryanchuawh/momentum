@@ -6,7 +6,15 @@ modalBtn.addEventListener('click', openModal);
 closeBtn.addEventListener('click', closeModal);
 
 function openModal(){
-    modal.style.display = 'block';
+    if(modal.style.display==='block'){
+        modal.style.display='none'; 
+        
+    }
+    else{
+        modal.style.display = 'block';
+        todoModal.style.display='none'; 
+    }
+    
 }
 function closeModal(){
     modal.style.display = 'none';
@@ -20,7 +28,15 @@ openTodoBtn.addEventListener('click', openTodo);
 closeTodoBtn.addEventListener('click', closeTodo);
 
 function openTodo(){
-    todoModal.style.display = 'block';
+    if(todoModal.style.display==='block'){
+        todoModal.style.display='none'; 
+        
+    }
+    else{
+        todoModal.style.display = 'block';
+        modal.style.display='none'; 
+    }
+    
 }
 function closeTodo(){
     todoModal.style.display = 'none';

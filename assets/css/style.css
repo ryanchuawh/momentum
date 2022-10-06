@@ -83,7 +83,7 @@ body{
 }*/
 /*Todo Input*/
 #main-todo{
-    display: none;
+    /*display: none;*/
     
 }
 #mainTodo{
@@ -107,7 +107,7 @@ body{
 }
 /*Main Focus checkbox*/
 #hiddenTodo{
-    /*display: none;*/
+    display: none;
     padding: 10px;
     height: 300px;
 }
