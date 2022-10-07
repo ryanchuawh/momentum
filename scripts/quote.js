@@ -20,13 +20,13 @@ var quoteLife = [
     'We do not remember days, we remember moments. <br> -Cesare Pavese', 
     'The truth is you don\'t know what is going to happen tomorrow. Life is a crazy ride, and nothing is guaranteed. <br> -Eminem',
     'Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less. <br> -Marie Curie', 
-    'He who has a why to live can bear almost any how. - Friedrich Nietzsche',
+    'He who has a why to live can bear almost any how. <br> - Friedrich Nietzsche',
     'Life is a series of natural and spontaneous changes. Don\'t resist them - that only creates sorrow. Let reality be reality. Let things flow naturally forward in whatever way they like. <br> -Lao Tzu', 
     'Into each life some rain must fall. <br> -Henry Wadsworth', 
     'Longfellow Give me the luxuries of life and I will willingly do without the necessities. <br> -Frank Lloyd Wright', 
     'The aim of life is to live, and to live means to be aware, joyously, drunkenly, serenely, divinely aware. <br> -Henry Miller', 
     'Don\'t go through life, grow through life. <br> -Eric Butterworth', 
-    'The most important thing is to enjoy your life - to be happy - it\'s all that matters. -Audrey Hepburn'
+    'The most important thing is to enjoy your life - to be happy - it\'s all that matters. <br> -Audrey Hepburn'
 ];
 
 var quoteSuccess = [
@@ -49,11 +49,20 @@ var quoteArray = [quote, quoteLife, quoteSuccess];
 
 var changeQuote = document.getElementById('quoteBtn');
 
-quoteBtn.addEventListener('click', function changeQuote()
+quoteBtn.addEventListener('click', function ()
 {
     cycle = (cycle+1)%quoteArray.length;
     document.getElementById('quotes').innerHTML = quoteArray[cycle][day%quoteArray[cycle].length];
 });
 
 
+
+var editQuote = document.getElementById('customBtn').addEventListener('click', function editQuote()
+{
+    var customQuote = document.getElementById('newQuotes').value;
+    var customAuthor = document.getElementById('newAuthor').value;
+    document.getElementById('quotes').innerHTML = customQuote + '<br>' + '-' + customAuthor;
+    document.getElementById('newQuotes').value = "";
+    document.getElementById('newAuthor').value = "";
+});
 
