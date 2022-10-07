@@ -29,12 +29,11 @@
                                             <label class="switch">
                                                 <input type="checkbox">
                                                 <span class="clockSlider round"></span>
-                                                </label>
-                                        </span>
-                                       
+                                            </label>
+                                        </span>   
                                     </div>
-                                </div> 
-                                
+                                </div>  
+
                             </div>
                             <div class="greet-container">
                                 <span class="greetings">Good Morning,</span>
@@ -50,13 +49,15 @@
                             </div>
                             <div>
                                 <form>
-                                    <p class="greetings">What is your main focus for today?</p>
-                                    <input type="text" name="mainFocus" id="mainTodo" required>
+                                    <div id="main-todo">
+                                        <p class="greetings">What is your main focus for today?</p>
+                                        <input type="text" name="mainFocus" id="mainTodo" required>
+                                    </div>
                                     <!--Hidden-->
                                     <div id="hiddenTodo">
                                         <p class="greetings">TODAY</p>
                                         <input type="checkbox" id="mainCheck" name="mainFocus">
-                                        <label for="mainFocus" class="mainFocus">Test</label>
+                                        <label for="mainFocus" class="mainFocus">Testing</label>
                                         <!--Missing Modal for edit/clear todo-->
                                         <i id="main-option" class="fa-solid fa-ellipsis"></i>  
                                         <p id="sucess">Great Work!</p>      
@@ -69,11 +70,50 @@
                                 <div id="settings"><i class="fa-solid fa-gear"></i></div>
                                 <div id="settingsmodal" class="modal">
                                     <div class="settingsmodalcontent">
-                                        <span id="closeBtn" class="closeBtn">&times;</span>
-                                        <p>Settings</p><br>
-                                        <button id="imgBtn" class="imgBtn">Switch Background Image</button><br><br>
-                                        <button id="quoteBtn" class="quoteBtn">Switch Quotes</button><br><br>
-                                        <button id="logoutBtn" class="btn2">Logout</button>
+                                       
+                                        <div id="settingsRow">
+                                            <div id="settingsNav">
+                                                <p>Settings</p>
+                                                <span>Background</span> 
+                                                <button id="imgBtn" class="imgBtn btn2" ><i class="fa-solid fa-shuffle"></i></button>
+                                                <span>Quotes</span>
+                                                <button id="quoteBtn" class="quoteBtn btn2"><i class="fa-solid fa-shuffle"></i></button><br>
+                                                <button id="logoutBtn" class="btn2">Logout</button>
+                                            </div>
+                                            <div id="myQuotes">
+                                                <span id="closeBtn" class="closeBtn">&times;</span>
+                                                <h1>Quotes</h1>
+                                                <h5>Add Quotes</h5>
+                                                <div id="newQuote">
+                                                    <textarea placeholder="Add Quote" id="newQuotes" class="newTask"></textarea>
+                                                    <input type="text" placeholder="Author" id="newAuthor" class="newTask">
+                                                    <button id="customBtn" class="btn2">Add</button>
+                                                </div>
+                                                <div id="catQuotes">
+                                                    <!--Dom display quotes-->
+                                                    <h5>Motivational Quotes</h5>
+                                                    <ul id="motivational">
+                                                        <li class="quotesLi">
+                                                            It always seems impossible until it's done.<br>-Nelson Mandela
+                                                        </li>
+                                                    </ul>
+                                                    <h5>Life Quotes</h5>
+                                                    <ul id="life">
+                                                        <li class="quotesLi">
+                                                            Life is really simple, but we insist on making it complicated.<br>-Confucius
+                                                        </li>
+                                                    </ul>
+                                                    <h5>Sucess Quotes</h5>
+                                                    <ul id="sucess">
+                                                        <li class="quotesLi">
+                                                            Strive not to be a success, but rather to be of value.<br>-Albert Einstein
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                    
+                                            </div>
+                                        </div>
+                                        <div class="bottom-arrow"></div>
                                     </div>
                                 </div>
                             </div>
@@ -81,11 +121,60 @@
                                 <p id="quotes"></p>
                                 <p class="author"></p>
                             </div>
-                            <!--Missing Modal for todo-->
-                            <div id="todo">Todo</div>
+                            <div id="todoBtn">Todo</div>
+                            <div id="todoModal">
+                                <div id="todoList">
+                                    <span id="todoClose" class="closeBtn">&times;</span>
+                                    
+                                    <div id="pomodoro">
+                                        <div id="pomoNavs">
+                                            <button class="nav active">Pomodoro</button>
+                                            <button class="nav">Short Break</button>
+                                            <button class="nav">Long Break</button>
+                                        </div>
+                                        <div class="timer">
+                                            25:00
+                                        </div>
+                                        <div class="StartBtn">START</div>
+                                    </div>
+                                    
+                                    <div class="category">
+                                        <button class="categoryBtn">
+                                            Today<i class="fa-solid fa-angle-down"></i>
+                                        </button>
+                                        <div class="category-content">
+                                            <div class="catRow">
+                                                <span>Today</span>
+                                                <span>0</span>
+                                            </div>
+                                            <div class="catRow">
+                                                <span>Done</span>
+                                                <span>0</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="tasks">
+                                        <div id="lists">
+                                            <div class="category">
+                                                <input type="checkbox" class="todobox">
+                                                <label for="todo-lists">Test</label>
+                                                <button class="catBtn">
+                                                    <i class="fa-solid fa-ellipsis"></i>
+                                                </button> 
+                                                <div class="category-content">
+                                                    <a>Edit</a>
+                                                    <a>Delete</a>
+                                                </div>
+                                            </div>
+                                         </div>
+                                        <div id="newTodo">
+                                            <input type="text" placeholder="New Todo" class="newTask">
+                                        </div>
+                                    </div>
+                                <div class="bottomArrow"></div>           
+                            </div>   
                         </div>
-                   </section>
-                
+                   </section>     
             </div>
         </main>    
     
@@ -99,6 +188,7 @@
         <script type="text/javascript" src="./scripts/logout.js"></script>
         <script type="text/javascript" src="./scripts/editName.js"></script>
         <script type="text/javascript" src="./scripts/quote.js"></script>
+
 
     </body>
 </html>
