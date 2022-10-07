@@ -153,22 +153,15 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <form class="todoList">
+                                        <label for="writeList">List For Today</label>
+                                        <input type="text" placeholder="Write what to do" id="newTask" />
+                                    </form>
                                     <div id="tasks">
                                         <div id="lists">
                                             <div class="category">
-                                                <input type="checkbox" class="todobox">
-                                                <label for="todo-lists">Test</label>
-                                                <button class="catBtn">
-                                                    <i class="fa-solid fa-ellipsis"></i>
-                                                </button> 
-                                                <div class="category-content">
-                                                    <a>Edit</a>
-                                                    <a>Delete</a>
-                                                </div>
+                                                <ul class="handleTodoList"></ul>
                                             </div>
-                                         </div>
-                                        <div id="newTodo">
-                                            <input type="text" placeholder="New Todo" class="newTask">
                                         </div>
                                     </div>
                                 <div class="bottomArrow"></div>           
@@ -183,6 +176,7 @@
         <script type="text/javascript" src="./scripts/greeting.js"></script>
         <script type="text/javascript" src="./scripts/backgroundImg.js"></script>
         <script src="./scripts/settingsmodal.js"></script>
+        <script type="text/javascript" src="./scripts/todo.js"></script>
         <script type="text/javascript" src="./scripts/checkLogin.js"></script>
         <script type="text/javascript" src="./scripts/loginValidation.js"></script>
         <script type="text/javascript" src="./scripts/logout.js"></script>
