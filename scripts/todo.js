@@ -1,4 +1,3 @@
-
 const toDoForm = document.querySelector(".todolist");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.querySelector(".handleTodoList");
