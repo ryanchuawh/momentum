@@ -43,10 +43,11 @@ var quoteSuccess = [
     'Formal education will make you a living; self-education will make you a fortune. <br> -Jim Rohn',
     'Desire is the key to motivation, but it\'s determination and commitment to an unrelenting pursuit of your goal - a commitment to excellence - that will enable you to attain the success you seek. <br> -Mario Andretti'
 ]
+//Additional Quote
+let addedQuote=[];
 
 var cycle = 0;
 var quoteArray = [quote, quoteLife, quoteSuccess];
-
 var changeQuote = document.getElementById('quoteBtn');
 
 quoteBtn.addEventListener('click', function changeQuote()
@@ -54,6 +55,49 @@ quoteBtn.addEventListener('click', function changeQuote()
     cycle = (cycle+1)%quoteArray.length;
     document.getElementById('quotes').innerHTML = quoteArray[cycle][day%quoteArray[cycle].length];
 });
-
-
-
+var editQuote = document.getElementById('customBtn').addEventListener('click', function editQuote()
+{
+    var customQuote = document.getElementById('newQuotes').value;
+    var customAuthor = document.getElementById('newAuthor').value;
+    document.getElementById('quotes').innerHTML = customQuote + '<br>' + '-' + customAuthor;
+    //add quotes in array
+    addedQuote.push(customQuote + '<br>' + '-' + customAuthor)
+    //save quotes
+    localStorage.setItem("myQuotes", JSON.stringify(addedQuote));
+    console.log(addedQuote);
+    const added=document.getElementById("addQuotes");
+    added.innerHTML="";//clear
+    //display
+    if(addedQuote!=""){
+        for(i=0;i<addedQuote.length;i++){
+            let li=document.createElement("li");
+            li.classList.add("quotesLi")
+            li.innerHTML=addedQuote[i];
+            added.append(li); 
+        }
+    }
+ 
+    document.getElementById('newQuotes').value = "";
+    document.getElementById('newAuthor').value = "";
+});
+const motivate=document.getElementById("motivational");
+for(i=0;i<quote.length;i++){
+    let li=document.createElement("li");
+    li.classList.add("quotesLi")
+    li.innerHTML=quote[i];
+    motivate.append(li); 
+}
+const life=document.getElementById("life");
+for(i=0;i<quoteLife.length;i++){
+    let li=document.createElement("li");
+    li.classList.add("quotesLi")
+    li.innerHTML=quoteLife[i];
+    life.append(li); 
+}
+const sucsess=document.getElementById("success");
+for(i=0;i<quoteSuccess.length;i++){
+    let li=document.createElement("li");
+    li.classList.add("quotesLi")
+    li.innerHTML=quoteSuccess[i];
+    success.append(li); 
+}

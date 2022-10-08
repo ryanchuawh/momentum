@@ -64,7 +64,24 @@ body{
 #name:focus{
     outline: none;
 }
-
+#editNameBtn{
+    cursor: pointer;
+}
+#editNameBtn:hover{
+    color: #5f5d5d;
+}
+.fa-pen-to-square{
+    font-size: 25px;
+}
+.fa-trash{
+    font-size: 25px;  
+}
+#editFocus:hover{
+    color: #5f5d5d;
+}
+#deleteFocus:hover{
+    color: #5f5d5d;
+}
 /*Clock*/
 #clock-container{
    flex-direction: row;
@@ -120,14 +137,21 @@ body{
    justify-content: left;
    text-align: left;
    gap:10px;
-   padding-top:20px;
+   /*padding-top:20px;*/
    padding-left: 10px;
    width: 100%;
    height: 100px;
 
 }
+#todoClose{
+    padding: 10px;
+    cursor: pointer;
+}
 #lists{
-    height: 90px;
+    /*height: 90px;*/
+}
+.checked{
+    text-decoration: line-through;
 }
 .newTask{
     width: 300px;
@@ -137,6 +161,22 @@ body{
 }
 .newTask:focus{
     outline: none;
+}
+
+.delBtn{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    font-size: 20px
+}
+.delBtn:hover{
+    color: red;
+}
+.item:hover{
+    background-color: #dad2d2;
+
 }
 /*Pomodoro*/
 #pomoNavs{
@@ -194,16 +234,20 @@ border-right:1px solid gray;
 /*Ul Lists for quotes*/
 ul{
    padding: 0;
+   list-style: none;
 }
 .quotesLi{
     font-size: 15px;
-    padding: 5px;
+    padding: 10px;
     list-style: none;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
 }
-#newQuote{
+#newQuotes{
+    height: 100px;
+    width: 100%;
 }
+
 #logoutBtn{ 
     bottom:0;
 }
@@ -222,4 +266,16 @@ ul{
     .clock-container span{
         font-size: 500%;
     }
-  }
+}
+@media (max-width: 547px) {
+    #settingsRow{
+        flex-direction: column;
+    }
+    #settingsNav{
+        width: 100%;
+        border-right:none;
+    }
+    #myQuotes{
+        width: 100%;     
+    }
+}

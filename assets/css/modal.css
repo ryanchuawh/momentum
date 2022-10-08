@@ -73,3 +73,12 @@
     border-left: 15px solid transparent;
     border-bottom: none;
   }
+  /*Media Queries*/
+  @media (max-width: 547px) {
+    .settingsmodalcontent{
+        
+        height: 80vh;
+        
+    }
+  }
+ 

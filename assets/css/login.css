@@ -39,9 +39,9 @@
     border-radius: 10px;
     border:1px solid white;
     color: white;
-    background-color: #aa8080;
+    background-color: #000000;
     padding: 5px;
 }
 .btn2:hover{
-    background-color: #6b4444;
+    background-color: #696464;
 }
