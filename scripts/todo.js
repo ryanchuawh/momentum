@@ -1,66 +1,155 @@
-const toDoForm = document.querySelector(".todoList"),
-  toDoInput = toDoForm.querySelector("input"),
-  toDoList = document.querySelector(".handleTodoList");
+const toDoForm = document.querySelector(".todolist");
+const toDoInput = toDoForm.querySelector("input");
+const toDoList = document.querySelector(".handleTodoList");
 
 const listTodo = "toDos";
-
 let toDos = [];
 
-function deleteToDo(event) {
-    const btn = event.target;
-    const li = btn.parentNode;
-    toDoList.removeChild(li);
-    const cleanToDos = toDos.filter(function (toDo) {
-        return toDo.id !== parseInt(li.id);
-    });
-    toDos = cleanToDos;
-    saveToDos();
+function deleteTodo(id) {
+  /*const btn = event.target;
+  const li = btn.parentNode;*/
+  const cleanToDos  =  toDos.filter(function (toDo) {
+    /*return toDo.id !== parseInt(li.id);*/
+    return toDo.id != id;
+  });
+  toDos = cleanToDos;
+  saveToDos(toDos);
 }
 
-function saveToDos() {
-    localStorage.setItem(listTodo, JSON.stringify(toDos));
+function saveToDos(toDos) {
+  localStorage.setItem(listTodo, JSON.stringify(toDos));
+  paintTodo(toDos);
 }
 
-function paintToDo(text) {
+function paintTodo(toDos) {
+  toDoList.innerHTML = "";
+
+  toDos.forEach(function(item) {
+    const checked = item.completed ? "checked": null;
     const li = document.createElement("li");
-    const delBtn = document.createElement("button");
-    const span = document.createElement("span");
-    const newId = toDos.length + 1;
-    delBtn.innerText = "Del";
-    delBtn.addEventListener("click", deleteToDo);
-    span.innerText = text;
-    li.appendChild(delBtn);
-    li.appendChild(span);
-    li.id = newId;
-    toDoList.appendChild(li);
-    const toDoObj = {
-        text: text,
-        id: newId
+    li.setAttribute("class", "item");
+    li.setAttribute("id", item.id);
+    if (item.completed === true) {
+      li.classList.add("checked");
+    }
+    li.innerHTML = `
+      <input type="checkbox" class="checkbox" ${checked}>
+      ${item.text}
+      <button class="delBtn fa-solid fa-delete-left"></button>
+    `;
+    toDoList.append(li);
+  });
+
+}
+function addTodo(text) {
+  
+    const toDoObj  = {
+      id: Date.now(),
+      text: text,
+      completed: false
     };
-    toDos.push(toDoObj);
-    saveToDos();
+
+    toDos.push(toDoObj );
+    saveToDos(toDos); 
+    
 }
 
-function handleSubmit(event) {
+function handleSubmit(event){
     event.preventDefault();
     const currentValue = toDoInput.value;
-    paintToDo(currentValue);
-    toDoInput.value = "";
-}
-
-function loadToDos() {
-    const loadedToDos = localStorage.getItem(listTodo);
-    if (loadedToDos !== null) {
-        const parsedToDos = JSON.parse(loadedToDos);
-        parsedToDos.forEach(function (toDo) {
-        paintToDo(toDo.text);
-        });
+    if (currentValue !== "") {
+      addTodo(currentValue);
+      toDoInput.value = "";
     }
 }
 
-function init() {
-    loadToDos();
-    toDoForm.addEventListener("submit", handleSubmit);
+function loadToDos() {
+  const loadedToDos = localStorage.getItem(listTodo);
+  if (loadedToDos!== null) {
+    const parsedToDos = JSON.parse(loadedToDos);
+    /*parsedToDos.forEach(function (toDo) {
+    paintToDo(toDo.text);
+    });*/
+    toDos=parsedToDos;
+    paintTodo(toDos);
+  }
 }
 
+function init() {
+  loadToDos();
+  toDoForm.addEventListener("submit", handleSubmit);
+}
 init();
+//For checkbox if complete
+function toggle(id) {
+  toDos.forEach(function(item) {
+    if (item.id == id) {
+      item.completed = !item.completed;
+    }
+  });
+  saveToDos(toDos);
+}
+
+loadToDos();
+
+toDoList.addEventListener("click", function(event) {
+  if (event.target.type === "checkbox") {
+    toggle(event.target.parentElement.getAttribute("id"));
+  }
+
+  if (event.target.classList.contains("delBtn")) {
+    deleteTodo(event.target.parentElement.getAttribute("id"));
+  }
+});
+//Main Todo
+const mainTodo = document.getElementById("todoMain");
+const mainInput = document.getElementById("mainTodo");
+const mainCheck = document.getElementById("mainCheck");
+mainTodo.addEventListener("submit",handleTodo);
+function handleTodo(event){
+  event.preventDefault();
+  if(mainInput.value===""){
+    document.getElementById("todoMessage").innerHTML = "Please input a task";
+  }
+  else{
+      document.getElementById("todoMessage").innerHTML = "";
+      document.getElementById("main-todo").style.display='none';
+      document.getElementById("hiddenTodo").style.display='block';
+      localStorage.setItem("focusKey", mainInput.value);
+      localStorage.setItem("completeKey", true);
+      document.getElementById("focus").innerHTML=mainInput.value;
+  }
+}
+const successTodo = document.getElementById('successMessage');
+//let keyComplete=localStorage.getItem("completeKey");
+//Focus Checkbox
+mainCheck.addEventListener("click",check);
+
+function check(){
+  if(mainCheck.checked===true){
+    localStorage.setItem("completeKey", true);
+    document.getElementById("focus").classList.add("checked") ;
+    successTodo.style.display="block";
+    
+  }
+  else{
+    localStorage.setItem("completeKey", false);
+    document.getElementById("focus").classList.remove("checked")
+    successTodo.style.display="none";
+    
+  }
+  //console.log(keyComplete)
+}
+//Delete Focus
+const delFocus = document.getElementById("deleteFocus");
+delFocus.addEventListener("click",del);
+function del(){
+  localStorage.setItem("focusKey", "");
+  localStorage.setItem("completeKey", false);
+  mainCheck.checked=false;
+  document.getElementById("todoMessage").innerHTML = "";
+  document.getElementById("focus").classList.remove("checked")
+  success.style.display="none";
+  document.getElementById("main-todo").style.display='block';
+  document.getElementById("hiddenTodo").style.display='none';
+}

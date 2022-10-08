@@ -11,7 +11,7 @@
                     <section id="login">
                         <div id="login-container">
                             <p class="greetings">Hello, what is your name?</p>
-                            <input type="text" name="name" id="LoginName">
+                            <input type="text" id="LoginName">
                             <p id="message"></p>
                             <button id="continueBtn" class="btn">Continue</button>
                         </div>
@@ -20,47 +20,26 @@
                         <div id="top">
                             <div class="clock-container">
                                 <span>00:00</span>
-                                <div class="option">
-                                    <button class="optionbtn">
-                                        <i class="fa-solid fa-ellipsis"></i>
-                                    </button>
-                                    <div class="option-content">
-                                        <span id="toggleText">12-hour clock
-                                            <label class="switch">
-                                                <input type="checkbox">
-                                                <span class="clockSlider round"></span>
-                                            </label>
-                                        </span>   
-                                    </div>
-                                </div>  
-
                             </div>
                             <div class="greet-container">
                                 <span class="greetings">Good Morning,</span>
-                                <input type="text" name="name" id="name" value="" required>
-                                <div class="option">
-                                    <button class="optionbtn">
-                                        <i class="fa-solid fa-ellipsis"></i>
-                                    </button>
-                                    <div class="option-content">
-                                      <span id="editNameBtn">Edit Name</span>
-                                    </div>
-                                </div>
+                                <input type="text" id="name" value="" required>
+                                <i id="editNameBtn" class="fa-solid fa-pen-to-square"></i>    
                             </div>
                             <div>
-                                <form>
+                                <form id="todoMain">
                                     <div id="main-todo">
                                         <p class="greetings">What is your main focus for today?</p>
-                                        <input type="text" name="mainFocus" id="mainTodo" required>
+                                        <input type="text" id="mainTodo"s>
+                                        <p id="todoMessage"></p>
                                     </div>
                                     <!--Hidden-->
                                     <div id="hiddenTodo">
                                         <p class="greetings">TODAY</p>
-                                        <input type="checkbox" id="mainCheck" name="mainFocus">
-                                        <label for="mainFocus" class="mainFocus">Testing</label>
-                                        <!--Missing Modal for edit/clear todo-->
-                                        <i id="main-option" class="fa-solid fa-ellipsis"></i>  
-                                        <p id="sucess">Great Work!</p>      
+                                        <input type="checkbox" id="mainCheck">
+                                        <label for="mainFocus" id="focus" class="mainFocus">Testing</label> 
+                                        <i id="deleteFocus" class="fa-solid fa-square-minus"></i>
+                                        <p id="successMessage">Great Work!</p>      
                                     </div>
                                 </form>
                             </div>
@@ -84,30 +63,24 @@
                                                 <span id="closeBtn" class="closeBtn">&times;</span>
                                                 <h1>Quotes</h1>
                                                 <h5>Add Quotes</h5>
-                                                <div id="newQuote">
-                                                    <textarea placeholder="Add Quote" class="newTask" id="newQuote"></textarea>
-                                                    <input type="text" placeholder="Author" class="newTask">
-                                                    <button class="btn2">Add</button>
+                                                <div id="newQuote" class="quotesLi">
+                                                    <textarea placeholder="Add Quote" id="newQuotes"></textarea>
+                                                    <input type="text" placeholder="Author" id="newAuthor">
+                                                    <button id="customBtn" class="btn2">Add</button>
                                                 </div>
                                                 <div id="catQuotes">
-                                                    <!--Dom display quotes-->
+                                                    <h5>My Quotes</h5>
+                                                    <ul id="addQuotes">
+                                                        
+                                                    </ul>
                                                     <h5>Motivational Quotes</h5>
                                                     <ul id="motivational">
-                                                        <li class="quotesLi">
-                                                            It always seems impossible until it's done.<br>-Nelson Mandela
-                                                        </li>
                                                     </ul>
                                                     <h5>Life Quotes</h5>
                                                     <ul id="life">
-                                                        <li class="quotesLi">
-                                                            It always seems impossible until it's done.<br>-Nelson Mandela
-                                                        </li>
                                                     </ul>
                                                     <h5>Sucess Quotes</h5>
-                                                    <ul id="sucess">
-                                                        <li class="quotesLi">
-                                                            It always seems impossible until it's done.<br>-Nelson Mandela
-                                                        </li>
+                                                    <ul id="success">
                                                     </ul>
                                                 </div>
                                                     
@@ -123,9 +96,8 @@
                             </div>
                             <div id="todoBtn">Todo</div>
                             <div id="todoModal">
+                                <span id="todoClose" class="closeBtn">&times;</span>
                                 <div id="todoList">
-                                    <span id="todoClose" class="closeBtn">&times;</span>
-                                    
                                     <div id="pomodoro">
                                         <div id="pomoNavs">
                                             <button class="nav active">Pomodoro</button>
@@ -135,34 +107,22 @@
                                         <div class="timer">
                                             25:00
                                         </div>
-                                        <div class="StartBtn">START</div>
+                                        <div class="StartBtn"><i class="fa-solid fa-play"></i></div>
                                     </div>
-                                    
                                     <div class="category">
                                         <button class="categoryBtn">
-                                            Today<i class="fa-solid fa-angle-down"></i>
+                                            Today
                                         </button>
-                                        <div class="category-content">
-                                            <div class="catRow">
-                                                <span>Today</span>
-                                                <span>0</span>
-                                            </div>
-                                            <div class="catRow">
-                                                <span>Done</span>
-                                                <span>0</span>
-                                            </div>
-                                        </div>
                                     </div>
-                                    <form class="todoList">
-                                        <label for="writeList">List For Today</label>
-                                        <input type="text" placeholder="Write what to do" id="newTask" />
-                                    </form>
                                     <div id="tasks">
                                         <div id="lists">
                                             <div class="category">
                                                 <ul class="handleTodoList"></ul>
                                             </div>
                                         </div>
+                                        <form class="todoList">
+                                            <input type="text" placeholder="New Todo" id="newTask" id="newTask"  class="newTask" />
+                                        </form>
                                     </div>
                                 <div class="bottomArrow"></div>           
                             </div>   
@@ -182,6 +142,7 @@
         <script type="text/javascript" src="./scripts/logout.js"></script>
         <script type="text/javascript" src="./scripts/editName.js"></script>
         <script type="text/javascript" src="./scripts/quote.js"></script>
+        <script type="text/javascript" src="./scripts/todo.js"></script>
 
 
     </body>

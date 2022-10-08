@@ -8,6 +8,7 @@ function ifValid(){
         document.getElementById("message").innerHTML = "Please tell us how we should address you.";
     }
     else{
+        document.getElementById("message").innerHTML = "";
         document.getElementById("login").style.display='none';
         document.getElementById("home").style.display='block';
         localStorage.setItem("nameKey", name1.value);
