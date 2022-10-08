@@ -201,15 +201,15 @@ body{
 .startBtn{
     margin: auto;
     justify-content: center;
-    background-color: gray;
+    background-color: rgb(0, 0, 0);
     border-radius: 10px;
     border:1px solid white;
     color: white;
-    width: 100px;
+    width: 50px;
     padding: 5px;
 }
 .startBtn:hover{
-    background-color: #aa8080;
+    background-color: #1f3a1e;
 }
 /*Settings Nav and Myquotes*/
 #settingsRow{
