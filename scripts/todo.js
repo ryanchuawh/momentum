@@ -120,7 +120,7 @@ function handleTodo(event){
       document.getElementById("focus").innerHTML=mainInput.value;
   }
 }
-const success = document.getElementById('successMessage');
+const successTodo = document.getElementById('successMessage');
 //let keyComplete=localStorage.getItem("completeKey");
 //Focus Checkbox
 mainCheck.addEventListener("click",check);
@@ -129,13 +129,13 @@ function check(){
   if(mainCheck.checked===true){
     localStorage.setItem("completeKey", true);
     document.getElementById("focus").classList.add("checked") ;
-    success.style.display="block";
+    successTodo.style.display="block";
     
   }
   else{
     localStorage.setItem("completeKey", false);
     document.getElementById("focus").classList.remove("checked")
-    success.style.display="none";
+    successTodo.style.display="none";
     
   }
   //console.log(keyComplete)

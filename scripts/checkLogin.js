@@ -24,12 +24,12 @@ window.addEventListener('load', function() {
                 console.log("test1")
                 mainCheck.checked=true;  
                 document.getElementById("focus").classList.add("checked") ;    
-                success.style.display="block";    
+                successTodo.style.display="block";    
             }
             else{
                 mainCheck.checked=false; 
                 document.getElementById("focus").classList.remove("checked") ; 
-                success.style.display="none";            
+                successTodo.style.display="none";            
             }
             //console.log("load")
             //console.log(keyComplete) 

@@ -148,7 +148,8 @@ body{
     cursor: pointer;
 }
 #lists{
-    /*height: 90px;*/
+    height: 150px;
+    overflow-y: scroll;
 }
 .checked{
     text-decoration: line-through;
@@ -192,7 +193,9 @@ body{
     background-color: transparent;
 }
 .active{
-    background-color: #f1e7bb;
+    background-color: #000000;
+    color:white;
+    border-radius: 5px;
 }
 .timer{
     font-size: 225%;
